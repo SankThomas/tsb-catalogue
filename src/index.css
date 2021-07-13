@@ -23,6 +23,11 @@ a {
   text-decoration: none;
 }
 
+/* Buttons */
+.btn-home {
+  @apply py-2 px-4 rounded-md shadow-lg border-2 border-green-500 bg-green-500 text-white hover:bg-green-700 transition-all duration-500 select-none;
+}
+
 body {
   font-family: "Tajawal", sans-serif;
   background-color: var(--primary-color);
