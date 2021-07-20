@@ -3,7 +3,7 @@ import Logo from "./Logo"
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between p-5">
+    <header className="header flex items-center justify-between p-5">
       <div>
         <Logo />
       </div>
