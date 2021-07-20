@@ -46,7 +46,8 @@ p {
   line-height: 1.6;
 }
 
-div.header,
-div.sidebar {
-  box-shadow: 5px 5px 5px black;
+.header,
+.sidebar {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--secondary-color);
 }
