@@ -3,9 +3,19 @@ import { FaPlus } from "react-icons/fa"
 import { v4 as uuidv4 } from "uuid"
 import List from "./List"
 
+const getLocalStorage = () => {
+  let items = localStorage.getItem("items")
+
+  if (items) {
+    return JSON.parse(localStorage.getItem("items"))
+  } else {
+    return []
+  }
+}
+
 const Todo = () => {
   const [text, setText] = useState("")
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState(getLocalStorage())
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -25,6 +35,10 @@ const Todo = () => {
   const deleteItem = (id) => setItems(items.filter((item) => item.id !== id))
 
   const clearItems = () => setItems([])
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items))
+  }, [items])
 
   return (
     <>
