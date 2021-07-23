@@ -38,14 +38,14 @@ const Todo = () => {
             type="text"
             placeholder="Enter your todo item"
             required
-            className="p-3 rounded-md mr-2 text-green-500 placeholder-green-500 tracking-wide w-72 md:w-96"
+            className="p-3 rounded-md mr-2 text-green-500 placeholder-green-500 tracking-wide w-72 mb-2 sm:mb-0 md:w-96"
             autoFocus
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
           <button
             type="submit"
-            className="flex items-center bg-green-500 p-3 rounded-md text-white mt-2 sm:mt-0"
+            className="flex items-center bg-green-500 p-3 rounded-md text-white"
             onSubmit={handleSubmit}
           >
             Add Item <FaPlus className="text-sm ml-2" />
