@@ -39,6 +39,11 @@ body {
   overflow: hidden;
 }
 
+button,
+input {
+  user-select: none;
+}
+
 button {
   font-family: inherit;
 }
