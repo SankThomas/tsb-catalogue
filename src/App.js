@@ -14,10 +14,9 @@ const App = () => {
     <Router>
       <ScrollToTop />
       <Header />
+      <Sidebar />
       <Switch>
-        <Route path="/" exact>
-          <Sidebar />
-        </Route>
+        <Route path="/" exact></Route>
         <Route path="/todo-list">
           <Todo />
         </Route>
