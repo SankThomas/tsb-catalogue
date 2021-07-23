@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { FaPlus } from "react-icons/fa"
 import { v4 as uuidv4 } from "uuid"
+import { motion } from "framer-motion"
 import List from "./List"
 
 const getLocalStorage = () => {
@@ -42,7 +43,18 @@ const Todo = () => {
 
   return (
     <>
-      <section className="p-5 md:pl-32">
+      <motion.section
+        className="p-5 md:pl-32"
+        initial={{
+          y: "-100vw",
+        }}
+        animate={{ y: 0 }}
+        transition={{
+          delay: 0.1,
+          stiffness: 50,
+          type: "spring",
+        }}
+      >
         <form
           onSubmit={handleSubmit}
           className="flex flex-wrap items-center"
@@ -66,7 +78,7 @@ const Todo = () => {
           </button>
         </form>
         <List items={items} deleteItem={deleteItem} clearItems={clearItems} />
-      </section>
+      </motion.section>
     </>
   )
 }
