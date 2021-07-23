@@ -9,7 +9,7 @@ export default function List({ items, deleteItem, clearItems }) {
           in your todo list
         </h3>
 
-        <ol className="px-5 mt-5">
+        <ol className="px-5 mt-5 md:w-96">
           {items.map(({ id, title }) => (
             <li
               key={id}
