@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 // Components
+import ScrollToTop from "./components/ScrollToTop"
 import Header from "./components/Header"
 import Sidebar from "./components/Sidebar"
 
@@ -11,6 +12,7 @@ import Error from "./pages/Error"
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Switch>
         <Header />
         <Route path="/" exact>
