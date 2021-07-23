@@ -13,7 +13,7 @@ export default function List({ items, deleteItem, clearItems }) {
           {items.map(({ id, title }) => (
             <li
               key={id}
-              className="todo-list text-base flex items-center justify-between p-2 rounded md:rounded-none"
+              className="todo-list text-base flex items-center justify-between p-2 m-1 rounded md:rounded-none"
             >
               {title}
               <button onClick={() => deleteItem(id)}>
