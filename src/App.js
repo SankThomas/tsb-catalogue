@@ -13,8 +13,8 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
+      <Header />
       <Switch>
-        <Header />
         <Route path="/" exact>
           <Sidebar />
         </Route>
