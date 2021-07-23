@@ -9,11 +9,11 @@ export default function List({ items, deleteItem, clearItems }) {
           in your todo list
         </h3>
 
-        <ol className="mt-5 md:w-96">
+        <ol className="mt-5 sm:grid grid-cols-2 lg:grid-cols-3">
           {items.map(({ id, title }) => (
             <li
               key={id}
-              className="todo-list text-base flex items-center justify-between p-2 rounded"
+              className="todo-list text-base flex items-center justify-between p-2 rounded md:rounded-none"
             >
               {title}
               <button onClick={() => deleteItem(id)}>
