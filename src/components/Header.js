@@ -1,5 +1,6 @@
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Logo from "./Logo"
+import profile from "./profile.png"
 
 export default function Header() {
   return (
@@ -9,12 +10,19 @@ export default function Header() {
       </div>
 
       <nav>
-        <ul>
-          <li>
-            <NavLink to="/todo-list">Todo List</NavLink>
+        <ul className="flex items-center">
+          <li className="mr-2 md:mr-5">
+            <Link to="/todo-list">Todo List</Link>
           </li>
           <li>
-            {/* <img src={profile} alt="Thomas Sankara" title="Thomas Sankara" /> */}
+            <Link to="/">
+              <img
+                src={profile}
+                alt="Thomas Sankara"
+                title="Thomas Sankara"
+                className="rounded-full bg-gray-100 p-1 md:w-12"
+              />
+            </Link>
           </li>
         </ul>
       </nav>
