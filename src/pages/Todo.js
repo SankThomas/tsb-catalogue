@@ -28,7 +28,7 @@ const Todo = () => {
 
   return (
     <>
-      <section className="p-5">
+      <section className="p-5 md:pl-32">
         <form
           onSubmit={handleSubmit}
           className="flex flex-wrap items-center"
@@ -38,14 +38,14 @@ const Todo = () => {
             type="text"
             placeholder="Enter your todo item"
             required
-            className="p-3 rounded-md mr-2 text-green-500 placeholder-green-500 tracking-wide"
+            className="p-3 rounded-md mr-2 text-green-500 placeholder-green-500 tracking-wide w-72 md:w-96"
             autoFocus
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
           <button
             type="submit"
-            className="flex items-center bg-green-500 p-3 rounded-md text-white"
+            className="flex items-center bg-green-500 p-3 rounded-md text-white mt-2 sm:mt-0"
             onSubmit={handleSubmit}
           >
             Add Item <FaPlus className="text-sm ml-2" />
