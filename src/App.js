@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import ScrollToTop from "./components/ScrollToTop"
 import Header from "./components/Header"
 import Sidebar from "./components/Sidebar"
+import Showcase from "./components/Showcase"
 
 // Pages
 import Todo from "./pages/Todo"
@@ -16,7 +17,9 @@ const App = () => {
       <Header />
       <Sidebar />
       <Switch>
-        <Route path="/" exact></Route>
+        <Route path="/" exact>
+          <Showcase />
+        </Route>
         <Route path="/todo-list">
           <Todo />
         </Route>
