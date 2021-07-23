@@ -17,7 +17,7 @@ const Todo = () => {
         id: uuidv4(),
         title: text,
       }
-      setItems([...items, newItems])
+      setItems([newItems, ...items])
       setText("")
     }
   }
