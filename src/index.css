@@ -36,6 +36,7 @@ body {
   font-family: "Tajawal", sans-serif;
   background-color: var(--primary-color);
   color: var(--very-light-gray);
+  overflow: hidden;
 }
 
 button {
