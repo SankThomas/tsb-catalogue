@@ -25,12 +25,14 @@ export default function List({ items, deleteItem, clearItems }) {
             </li>
           ))}
         </ol>
-        <button
-          onClick={clearItems}
-          className="p-3 text-white rounded-md bg-red-500 mt-10"
-        >
-          Clear Items
-        </button>
+        {items.length !== 0 && (
+          <button
+            onClick={clearItems}
+            className="p-3 text-white rounded-md bg-red-500 mt-10"
+          >
+            Clear Items
+          </button>
+        )}
       </article>
     </>
   )
