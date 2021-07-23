@@ -16,8 +16,10 @@ export default function Showcase() {
           type: "spring",
         }}
       >
-        <h1 className="text-4xl mb-2">Homepage still under development.</h1>
-        <h3 className="mt-2">
+        <h1 className="text-4xl text-center mb-2">
+          Homepage still under development.
+        </h1>
+        <h3 className="text-center mt-2">
           As you wait, check out the{" "}
           <Link
             to="/todo-list"
