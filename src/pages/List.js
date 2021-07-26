@@ -4,7 +4,7 @@ export default function List({ items, deleteItem, clearItems }) {
   return (
     <>
       <article className="mt-5">
-        <h3 className="flex items-center">
+        <h3 className="flex items-center text-xl">
           You have <span className="text-4xl mx-2">{items.length}</span> items
           in your todo list
         </h3>
@@ -13,7 +13,7 @@ export default function List({ items, deleteItem, clearItems }) {
           {items.map(({ id, title }) => (
             <li
               key={id}
-              className="todo-list text-base flex items-center justify-between p-2 m-1 rounded md:rounded-none"
+              className="todo-list text-xl flex items-center justify-between p-2 m-1 rounded md:rounded-none"
             >
               {title}
               <button onClick={() => deleteItem(id)}>
