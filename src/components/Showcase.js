@@ -19,7 +19,7 @@ export default function Showcase() {
         <h1 className="text-4xl text-center mb-2">
           Homepage still under development.
         </h1>
-        <h3 className="text-center mt-2">
+        <h3 className="text-center text-xl mt-2">
           As you wait, check out the{" "}
           <Link
             to="/todo-list"
