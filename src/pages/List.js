@@ -17,18 +17,26 @@ export default function List({ items, deleteItem, clearItems, editItem }) {
               className="todo-list text-xl flex items-center justify-between p-2 m-1 rounded md:rounded-none"
             >
               {title}
-              <button onClick={() => editItem(id)}>
-                <HiPencil
-                  className="text-xl text-green-500 cursor-pointer"
-                  title="Edit item"
-                />
-              </button>
-              <button onClick={() => deleteItem(id)}>
-                <IoMdClose
-                  className="text-xl text-red-500 cursor-pointer"
-                  title="Delete item"
-                />
-              </button>
+              <div className="flex items-center">
+                <button
+                  onClick={() => editItem(id)}
+                  className="mr-2 hover:bg-green-200 rounded transition-all duration-300"
+                >
+                  <HiPencil
+                    className="text-xl text-green-500 cursor-pointer"
+                    title="Edit item"
+                  />
+                </button>
+                <button
+                  onClick={() => deleteItem(id)}
+                  className="hover:bg-red-200 rounded transition-all duration-300"
+                >
+                  <IoMdClose
+                    className="text-xl text-red-500 cursor-pointer"
+                    title="Delete item"
+                  />
+                </button>
+              </div>
             </li>
           ))}
         </ol>
