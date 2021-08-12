@@ -17,7 +17,6 @@ const getLocalStorage = () => {
 const Todo = () => {
   const [text, setText] = useState("")
   const [items, setItems] = useState(getLocalStorage())
-  // eslint-disable-next-line
   const [isEditing, setIsEditing] = useState(false)
 
   const handleSubmit = (e) => {
@@ -83,7 +82,8 @@ const Todo = () => {
             className="flex items-center bg-green-500 p-3 rounded-md text-white text-xl"
             onSubmit={handleSubmit}
           >
-            Add Item <FaPlus className="text-sm ml-2" />
+            {isEditing ? "Editing" : "Add item"}{" "}
+            <FaPlus className="text-sm ml-2" />
           </button>
         </form>
         <List
