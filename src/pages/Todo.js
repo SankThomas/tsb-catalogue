@@ -17,6 +17,7 @@ const getLocalStorage = () => {
 const Todo = () => {
   const [text, setText] = useState("")
   const [items, setItems] = useState(getLocalStorage())
+  const [isEditing, setIsEditing] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -36,6 +37,13 @@ const Todo = () => {
   const deleteItem = (id) => setItems(items.filter((item) => item.id !== id))
 
   const clearItems = () => setItems([])
+
+  const editItem = (id) => {
+    const editingItem = items.find((item) => item.id === id)
+    setItems(items.filter((item) => item.id !== id))
+    setIsEditing(true)
+    setText(editingItem.title)
+  }
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items))
@@ -77,7 +85,12 @@ const Todo = () => {
             Add Item <FaPlus className="text-sm ml-2" />
           </button>
         </form>
-        <List items={items} deleteItem={deleteItem} clearItems={clearItems} />
+        <List
+          items={items}
+          deleteItem={deleteItem}
+          clearItems={clearItems}
+          editItem={editItem}
+        />
       </motion.section>
     </>
   )
