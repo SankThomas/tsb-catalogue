@@ -17,6 +17,7 @@ const getLocalStorage = () => {
 const Todo = () => {
   const [text, setText] = useState("")
   const [items, setItems] = useState(getLocalStorage())
+  // eslint-disable-next-line
   const [isEditing, setIsEditing] = useState(false)
 
   const handleSubmit = (e) => {
