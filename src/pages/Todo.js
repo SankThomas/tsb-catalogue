@@ -31,6 +31,7 @@ const Todo = () => {
       }
       setItems([newItems, ...items])
       setText("")
+      setIsEditing(false)
     }
   }
 
