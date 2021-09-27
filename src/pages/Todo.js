@@ -3,6 +3,7 @@ import { FaPlus } from "react-icons/fa"
 import { v4 as uuidv4 } from "uuid"
 import { motion } from "framer-motion"
 import List from "./List"
+import Alert from "../components/Alert"
 
 const getLocalStorage = () => {
   let items = localStorage.getItem("items")
@@ -22,17 +23,13 @@ const Todo = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (!text) {
-      alert("Input is empty")
-    } else {
-      const newItems = {
-        id: uuidv4(),
-        title: text,
-      }
-      setItems([newItems, ...items])
-      setText("")
-      setIsEditing(false)
+    const newItems = {
+      id: uuidv4(),
+      title: text,
     }
+    setItems([newItems, ...items])
+    setText("")
+    setIsEditing(false)
   }
 
   const deleteItem = (id) => setItems(items.filter((item) => item.id !== id))
@@ -72,7 +69,6 @@ const Todo = () => {
           <input
             type="text"
             placeholder="Enter your todo item"
-            required
             className="text-xl p-3 rounded-md mr-2 text-green-500 placeholder-green-500 tracking-wide w-72 mb-2 sm:mb-0 md:w-96"
             autoFocus
             value={text}
@@ -87,6 +83,7 @@ const Todo = () => {
             <FaPlus className="text-sm ml-2" />
           </button>
         </form>
+        {!text && <Alert />}
         <List
           items={items}
           deleteItem={deleteItem}
